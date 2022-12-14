@@ -39,5 +39,15 @@ namespace LinqProject
 
             //return this.librosCollection.Where(book => book.PageCount > 250 && book.Title.Contains("in Action"));
         }
+
+        public bool AllBooksHasStatus()
+        {
+            return this.librosCollection.All( b => b.Status != String.Empty);
+        }
+
+        public bool AnyPublish2005()
+        {
+            return this.librosCollection.Any(b => b.PublishedDate.Year == 2005);
+        }
     }
 }
