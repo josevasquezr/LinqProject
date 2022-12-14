@@ -8,6 +8,8 @@ var booksAfter2000 = linqQueries.BooksAfter2000();
 
 var booksQuery2 = linqQueries.BooksQuery2();
 
+var pythonBooks = linqQueries.BooksQueryWithContains();
+
 Console.WriteLine($"All Books Has Status? - {linqQueries.AllBooksHasStatus()}");
 
 Console.WriteLine("=================================");
@@ -16,7 +18,7 @@ Console.WriteLine($"Was any book published in 2005? - {linqQueries.AnyPublish200
 
 Console.WriteLine("=================================");
 
-ImprimirValores(booksQuery2);
+ImprimirValores(pythonBooks);
 
 void ImprimirValores(IEnumerable<Book> listadelibros)
 {

@@ -49,5 +49,10 @@ namespace LinqProject
         {
             return this.librosCollection.Any(b => b.PublishedDate.Year == 2005);
         }
+
+        public IEnumerable<Book> BooksQueryWithContains()
+        {
+            return this.librosCollection.Where(b => b.Categories.Contains("Python"));
+        }
     }
 }
