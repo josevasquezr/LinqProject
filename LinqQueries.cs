@@ -21,5 +21,23 @@ namespace LinqProject
         {
             return librosCollection;
         }
+
+        public IEnumerable<Book> BooksAfter2000()
+        {
+            return from book in librosCollection
+                    where book.PublishedDate.Year > 2000
+                    select book;
+
+            //return this.librosCollection.Where( b => b.PublishedDate.Year > 2000);
+        }
+
+        public IEnumerable<Book> BooksQuery2()
+        {
+            return from book in this.librosCollection
+                   where book.PageCount > 250 && book.Title.Contains("in Action")
+                   select book;
+
+            //return this.librosCollection.Where(book => book.PageCount > 250 && book.Title.Contains("in Action"));
+        }
     }
 }
