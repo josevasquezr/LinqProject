@@ -10,6 +10,10 @@ var booksQuery2 = linqQueries.BooksQuery2();
 
 var pythonBooks = linqQueries.BooksQueryWithContains();
 
+var queryOrderBy1 = linqQueries.QueryOrderBy1();
+
+var queryOrderBy2 = linqQueries.QueryOrderBy2();
+
 Console.WriteLine($"All Books Has Status? - {linqQueries.AllBooksHasStatus()}");
 
 Console.WriteLine("=================================");
@@ -18,7 +22,7 @@ Console.WriteLine($"Was any book published in 2005? - {linqQueries.AnyPublish200
 
 Console.WriteLine("=================================");
 
-ImprimirValores(pythonBooks);
+ImprimirValores(queryOrderBy2);
 
 void ImprimirValores(IEnumerable<Book> listadelibros)
 {

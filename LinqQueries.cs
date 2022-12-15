@@ -54,5 +54,23 @@ namespace LinqProject
         {
             return this.librosCollection.Where(b => b.Categories.Contains("Python"));
         }
+
+        public IEnumerable<Book> QueryOrderBy1()
+        {
+            return (from book in this.librosCollection
+                    where book.Categories.Contains("Java")
+                    select book).OrderBy(book => book.Title);
+
+            //return this.librosCollection.Where(book => book.Categories.Contains("Java")).OrderBy(book => book.Title);
+        }
+
+        public IEnumerable<Book> QueryOrderBy2()
+        {
+            return (from book in this.librosCollection
+                    where book.PageCount > 450
+                    select book).OrderByDescending(book => book.PageCount);
+
+            //return this.librosCollection.Where(book => book.PageCount > 450).OrderByDescending(book => book.PageCount);
+        }
     }
 }
