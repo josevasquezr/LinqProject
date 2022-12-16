@@ -14,6 +14,10 @@ var queryOrderBy1 = linqQueries.QueryOrderBy1();
 
 var queryOrderBy2 = linqQueries.QueryOrderBy2();
 
+var queryTake = linqQueries.QueryTake();
+
+var querySkip = linqQueries.QuerySkip();
+
 Console.WriteLine($"All Books Has Status? - {linqQueries.AllBooksHasStatus()}");
 
 Console.WriteLine("=================================");
@@ -22,7 +26,7 @@ Console.WriteLine($"Was any book published in 2005? - {linqQueries.AnyPublish200
 
 Console.WriteLine("=================================");
 
-ImprimirValores(queryOrderBy2);
+ImprimirValores(querySkip);
 
 void ImprimirValores(IEnumerable<Book> listadelibros)
 {

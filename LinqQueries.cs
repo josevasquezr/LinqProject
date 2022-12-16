@@ -72,5 +72,31 @@ namespace LinqProject
 
             //return this.librosCollection.Where(book => book.PageCount > 450).OrderByDescending(book => book.PageCount);
         }
+
+        public IEnumerable<Book> QueryTake()
+        {
+            return (from book in this.librosCollection
+                   where book.Categories.Contains("Java")
+                   orderby book.PublishedDate descending
+                   select book).Take(3);
+
+            //return this.librosCollection.Where(book => book.Categories.Contains("Java"))
+            //            .OrderByDescending(book => book.PublishedDate)
+            //            .Take(3);
+        }
+
+        public IEnumerable<Book> QuerySkip()
+        {
+            return (from book in this.librosCollection
+                    where book.PageCount > 400
+                    select book)
+                   .Take(4)
+                   .Skip(2);
+
+            //return this.librosCollection
+            //    .Where(book => book.PageCount > 400)
+            //    .Take(4)
+            //    .Skip(2);
+        }
     }
 }
