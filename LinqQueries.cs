@@ -98,5 +98,16 @@ namespace LinqProject
             //    .Take(4)
             //    .Skip(2);
         }
+
+        public IEnumerable<Book> QuerySelect()
+        {
+            return this.librosCollection
+                .Take(3)
+                .Select(book => new Book()
+                {
+                    Title = book.Title,
+                    PageCount = book.PageCount
+                });
+        }
     }
 }

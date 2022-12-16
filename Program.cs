@@ -18,6 +18,9 @@ var queryTake = linqQueries.QueryTake();
 
 var querySkip = linqQueries.QuerySkip();
 
+var querySelect = linqQueries.QuerySelect();
+
+
 Console.WriteLine($"All Books Has Status? - {linqQueries.AllBooksHasStatus()}");
 
 Console.WriteLine("=================================");
@@ -26,7 +29,7 @@ Console.WriteLine($"Was any book published in 2005? - {linqQueries.AnyPublish200
 
 Console.WriteLine("=================================");
 
-ImprimirValores(querySkip);
+ImprimirValores(querySelect);
 
 void ImprimirValores(IEnumerable<Book> listadelibros)
 {
